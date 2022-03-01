@@ -52,13 +52,13 @@ def previousSong():
     songList.selection_set(current[0] - 1)
 
 
-# Uyg. ismi
+# App Name
 logo = PhotoImage(file="Icons/logo.png")
 isim = Label(window, image=logo, text="Ton Player", bg="black", fg="#1db954", font="Helvetica 17", compound="left")
 isim.pack()
 
 
-# Şarkı Listesi
+# Song List
 songList = Listbox(window, bg="black", fg="white", width=100, selectbackground="gray", highlightcolor="black", bd=1)
 songList.pack()
 for i in os.listdir("Songs"):
@@ -68,16 +68,16 @@ for i in os.listdir("Songs"):
 tustakim = Frame(window)
 tustakim.pack()
 
-# Önceki Şarkı Butonu
+# Previous Button
 previousb = PhotoImage(file="Icons/previous.png")
 previousButton = Button(tustakim, bg="black", image=previousb, width=62, height=59, bd=0, command=previousSong)
 previousButton.grid(row=0, column=0)
 
-# Oynatma Butonu
+# Play Button
 mainButton = Button(tustakim, bg="black", image=mainb, width=62, height=59, bd=0, command=playstop)
 mainButton.grid(row=0, column=1)
 
-# Sonraki Şarkı Butonu
+# Next Button
 skipb = PhotoImage(file="Icons/skip.png")
 skipButton = Button(tustakim, bg="black", image=skipb, width=62, height=59, bd=0, command=nextSong)
 skipButton.grid(row=0, column=2)
